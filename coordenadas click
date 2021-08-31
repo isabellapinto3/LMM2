@@ -1,0 +1,53 @@
+PImage Cuerpo;
+PImage Pulmon;
+PImage Cora;
+PShape anatomy;
+boolean resize = false;
+int ancho = 700;
+int alto = 800;
+
+void setup() {
+
+  size (600, 800);
+  
+  Cuerpo = loadImage ("cuerpo.png");
+  Pulmon = loadImage ("pulmon.png");
+  Cora = loadImage ("cora.png");
+}
+
+void draw () {
+
+  fill (255, 0, 0);
+  imageMode (CENTER);
+  image (Cuerpo, width/2, height/2);
+
+  if (mouseX>230 && mouseX<290 && mouseY >370 && mouseY < 430) {
+    fill(255, 70);
+    ellipseMode(CENTER);
+    ellipse(260, 400, 60, 60);
+  }
+  if (mouseX>310 && mouseX<360 && mouseY >400 && mouseY < 460) {
+    fill(255, 70);
+    ellipseMode(CENTER);
+    ellipse(340, 430, 60, 60);
+  }
+  if (mouseX>240 && mouseX<300 && mouseY >160 && mouseY < 220) {
+    fill(255, 70);
+    ellipseMode(CENTER);
+    ellipse(270, 190, 60, 60);
+  }
+  if (mouseX>385 && mouseX<445 && mouseY >350 && mouseY < 410) {
+    fill(255, 70);
+    ellipseMode(CENTER);
+    ellipse(415, 380, 60, 60);
+  }
+  
+  }
+  
+  void mouseClicked () {
+
+  if (mouseX>230 && mouseX<290 && mouseY >370 && mouseY < 430) {
+    resize = true;
+  }
+  //  acá van las coordenadas anteriores trabajadas con el resize  //
+  }
