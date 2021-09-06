@@ -39,7 +39,7 @@ function preload() {
   pulmones[6] = loadImage("img/6.png");
   pulmones[7] = loadImage("img/7.png");
   pulmones[8] = loadImage("img/8.png");
-  pulmones[9] = loadImage("img/9.png"); 
+  pulmones[9] = loadImage("img/9.png");
 
 }
 
@@ -49,7 +49,7 @@ function setup() {
   fondo = loadSound("sound/fondo.mp3")
 
   x = 0;
-  y = 40;
+  y = 0;
   ancho = 600;
   alto = 700;
   click = false;
@@ -57,13 +57,13 @@ function setup() {
   contador = 0;
   contador2 = 0;
   estado = 0;
-  createCanvas(600, 800);
+  createCanvas(600, 700);
 
 }
 
 function draw() {
   background(20);
-
+  fill(255);
 
   //estado inicio
   if (estado == 0){
@@ -72,7 +72,7 @@ function draw() {
     }
     image(anatomy[0], x, y);
   }
-  
+
   //estado pulmones cambiando
   if(estado == 1){
 
@@ -85,19 +85,18 @@ function draw() {
   //estado muerto
   if(estado == 2){
     image(anatomy[5], x, y);
-
   }
 
-  if (mouseX > 230 && mouseX < 290 && mouseY > 370 && mouseY < 430) {
+  if (mouseX > 253 && mouseX < 279 && mouseY > 314 && mouseY < 342) {
     fill(255, 70);
     ellipseMode(CENTER);
     noStroke();
-    ellipse(260, 400, 60, 60);
+    ellipse(253, 314, 50, 50);
   }
 }
 
 function mousePressed() {
-  if (mouseX > 230 && mouseX < 290 && mouseY > 370 && mouseY < 430) {
+  if (mouseX > 253 && mouseX < 279 && mouseY > 314 && mouseY < 342) {
     click = true;
     picar.play();
     estado = 1;
@@ -113,7 +112,7 @@ function mousePressed() {
       ruido.play();
       picar.play();
       contador2+=1;
-      
+
     }
     if(contador2>9){
       estado = 2;
@@ -122,5 +121,5 @@ function mousePressed() {
       ruido.play();
     }
 
-  }  
+  }
 }
