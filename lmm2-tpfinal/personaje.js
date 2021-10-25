@@ -2,12 +2,17 @@ class Personaje {
   constructor() {
     this.x = 50;
     this.y = height / 2;
-    this.speed = 10;
+    this.speed = 5;
+
+    //Ancho del Personaje
+    this.w=25;
+    //Alto del Personaje
+    this.h=40;
   }
 
   draw() {
     fill(255);
-    rect(this.x, this.y, 50, 80);
+    rect(this.x, this.y, this.w, this.h);
   }
 
   mover() {

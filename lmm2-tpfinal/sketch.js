@@ -19,11 +19,11 @@ function draw() {
   escenario.draw();
 
   if (piso == 1) {
-    personaje.y = height / 2 + 200;
+    personaje.y = height / 2 + 250;
   } else if (piso == 2) {
-    personaje.y = height / 2
+    personaje.y = height / 2+50;
   } else {
-    personaje.y = 100;
+    personaje.y = 150;
   }
 
   personaje.draw();
