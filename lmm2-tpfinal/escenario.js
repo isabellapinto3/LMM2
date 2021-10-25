@@ -7,6 +7,5 @@ class Escenario {
     image(bg,0,0);
     image(bg,width,0);
     image(bg,width*2,0);
-
   }
 }

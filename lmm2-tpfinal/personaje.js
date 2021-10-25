@@ -1,8 +1,13 @@
 class Personaje {
   constructor() {
+    //Posicion personaje
     this.x = 100;
     this.y = height / 2;
+
+    //Velocidad personaje
     this.speed = 7;
+
+    //Contador para imagenes del personaje
     this.contador = 0;
 
     //Ancho del Personaje
@@ -29,7 +34,6 @@ class Personaje {
       if (this.x < width * 3-this.w) {
         this.x += this.speed;
       }
-
       this.contador = 1;
     } else {
       this.contador = 0;

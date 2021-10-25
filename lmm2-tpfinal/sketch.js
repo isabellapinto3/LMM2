@@ -8,11 +8,10 @@ let personaje;
 let escenario;
 
 function preload() {
-  astroimg[0] = loadImage('img/astro0.png');
-
-  astroimg[1] = loadImage('img/astro1.png');
-
-  astroimg[2] = loadImage('img/astro2.png');
+  //Cargo imagenes astronauta
+  for(let i = 0;i<3;i++){
+    astroimg[i]=loadImage('img/astro'+i+'.png')
+  }
   bg = loadImage('img/background.png');
 }
 
