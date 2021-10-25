@@ -1,11 +1,20 @@
 //variables globales
-let piso;
 var posx;
-
+let astroimg = [];
+let bg;
 
 //Clases
 let personaje;
 let escenario;
+
+function preload() {
+  astroimg[0] = loadImage('img/astro0.png');
+
+  astroimg[1] = loadImage('img/astro1.png');
+
+  astroimg[2] = loadImage('img/astro2.png');
+  bg = loadImage('img/background.png');
+}
 
 function setup() {
   createCanvas(1300, 600);
@@ -14,37 +23,14 @@ function setup() {
   personaje = new Personaje();
   escenario = new Escenario();
 
-  piso = 2;
 }
 
-function draw() {   
-  translate (-posx,0);
+function draw() {
+  translate(-posx, 0);
+  background(255,0,0);
 
-  background(255);
   escenario.draw();
-
-  if (piso == 1) {
-    personaje.y = height / 2 + 250;
-  } else if (piso == 2) {
-    personaje.y = height / 2+50;
-  } else {
-    personaje.y = 150;
-  }
-
   personaje.draw();
   personaje.mover();
-  
-}
 
-function keyPressed() {
-  if (keyCode == UP_ARROW) {
-    if (piso != 3) {
-      piso += 1;
-    }
-  }
-  if (keyCode == DOWN_ARROW) {
-    if (piso != 1) {
-      piso -= 1;
-    }
-  }
 }
