@@ -24,7 +24,7 @@ class Obstaculos {
   }
 
   click() {
-    if (this.distancia < 50) {
+    if (this.distancia < 50 && this.vivo==true) {
       if (mouseX + posx > this.x && mouseX + posx < this.x + obstimg.width && mouseY > this.y && mouseY < this.y + obstimg.height) {
         this.vida--;
         ruido.play();
