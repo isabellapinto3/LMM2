@@ -5,7 +5,7 @@ class Obstaculos {
     this.w = 50;
     this.h = 50;
     this.vivo = true;
-
+    this.vida=3;
     this.c = color(255);
 
   }
@@ -26,7 +26,12 @@ class Obstaculos {
   click() {
     if (this.distancia < 50) {
       if (mouseX + posx > this.x && mouseX + posx < this.x + obstimg.width && mouseY > this.y && mouseY < this.y + obstimg.height) {
+        this.vida--;
+        ruido.play();
+      picar.play();
+      if(this.vida==0){
         this.vivo = false;
+      }
       }
     }
   }

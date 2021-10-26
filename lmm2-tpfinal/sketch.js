@@ -22,6 +22,8 @@ function preload() {
   bg = loadImage('img/background.png');
   walls = loadImage('img/walls.png');
   obstimg = loadImage('img/rock.png');
+  picar = loadSound("sound/picar.mp3");
+  ruido = loadSound("sound/ruido.mp3");
 }
 
 function setup() {
