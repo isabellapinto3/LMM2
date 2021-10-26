@@ -3,6 +3,7 @@ var posx;
 let bg;
 let walls;
 let cantObstaculos;
+let estado;
 
 //Clases
 let personaje;
@@ -29,6 +30,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
+  estado = "menu";
   cantObstaculos = 3;
   //Declaro clases
   personaje = new Personaje();
@@ -40,21 +42,34 @@ function setup() {
 }
 
 function draw() {
+  if (estado == "menu") {
+    background(255, 0, 0);
+    textAlign(CENTER, CENTER);
+    textSize(28);
+    text("Jugar", width / 2, height / 2);
 
-  translate(-posx, 0);
-  background(255, 0, 0);
-
-  escenario.draw();
-  personaje.draw();
-  personaje.mover();
-
-
-  for (let i = 0; i < cantObstaculos; i++) {
-    obstaculos[i].display();
+    fill(20);
+    ellipse(mouseX, mouseY, 5, 5);
+    if (mouseIsPressed) {
+      if (mouseX > width / 2 - 40 && mouseX < width / 2 + 40 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) estado = "juego";
+    }
   }
-  stroke(0);
-  noFill();
-  ellipse(mouseX + posx, mouseY, 20, 20);
+
+  if (estado == "juego") {
+    translate(-posx, 0);
+    background(255, 0, 0);
+
+    escenario.draw();
+    personaje.draw();
+    personaje.mover();
+
+
+    for (let i = 0; i < cantObstaculos; i++) {
+      obstaculos[i].display();
+    }
+    fill(20);
+    ellipse(mouseX + posx, mouseY, 5, 5);
+  }
 }
 
 function mousePressed() {

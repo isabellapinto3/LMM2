@@ -7,9 +7,6 @@ class Personaje {
     //Velocidad personaje
     this.speed = 7;
 
-    //Contador para imagenes del personaje
-    this.contador = 0;
-
     //Ancho del Personaje
     this.w = 27;
     //Alto del Personaje
