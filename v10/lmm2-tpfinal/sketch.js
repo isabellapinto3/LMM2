@@ -15,6 +15,7 @@ let hudBarra;
 //Clases
 let personaje;
 let escenario;
+let animacion;
 let obstaculos = [];
 let puntos = [];
 let lluvia = [];
@@ -31,10 +32,14 @@ function preload() {
   walkRight = loadAnimation("img/astro1.png", "img/astro2.png", "img/astro3.png");
   walkLeft = loadAnimation("img/astro6.png", "img/astro7.png", "img/astro8.png");
   picaranimacion = loadAnimation("img/astro4.png", "img/astro5.png");
+
+  //Comic
+  comic = loadImage("img/comic.png")
+
   //hud
   hudBarra = loadImage('img/hud.png');
   for(let i = 0;i<6;i++){
-    hudcara[i]=loadImage("img/hudcara"+i+".png");    
+    hudcara[i]=loadImage("img/hudcara"+i+".png");
   }
 
   //niveles
@@ -52,6 +57,7 @@ function preload() {
     rock[i]=loadImage("img/rock"+i+".png");
   }
   moco = loadImage('img/moco.png');
+  saliva=loadImage("img/saliva.png");
   //sonidos
   picar = loadSound("sound/picar.mp3");
   ruido = loadSound("sound/ruido.mp3");
@@ -67,10 +73,11 @@ function setup() {
   cantLluvia = 50;
   cantObstaculos = 10;
   cantPuntos = 3;
-
+  print(estado);
   //Declaro clases
   personaje = new Personaje();
   escenario = new Escenario();
+  animacion = new Animacion();
   hud = new Hud();
 
   for (let i = 0; i < cantObstaculos; i++) {
@@ -88,13 +95,14 @@ function setup() {
 
 function draw() {
   if (estado == "menu") {
-    image(menu,0,0);
+    escenario.menu();
     if (keyDown('ENTER')) {
-        estado="nivel1";
+      estado = "nivel1";
     }
-    if (mouseIsPressed) {
-      if (mouseX > width / 2 - 40 && mouseX < width / 2 + 40 && mouseY > height / 2 - 25 && mouseY < height / 2 + 25) estado = "nivel1";
-    }
+  }
+
+  if(estado=="animacion"){
+    animacion.display();
   }
 
   push()
@@ -116,7 +124,7 @@ function draw() {
     }
     escenario.nivel1();
     //obstaculos
-    
+
 
     for (let i = 0; i < cantPuntos; i++) {
       puntos[i].display();
@@ -144,7 +152,7 @@ function draw() {
     }
     if (keyDown('w')) {
       if(posx >3200 && posx<3300 && personaje.y < 280){
-        
+
         estado = "nivel2"
         personaje.reset();
         console.log(estado);
@@ -193,11 +201,11 @@ function draw() {
     for (let i = 0; i < cantPuntos; i++) {
       puntos[i].display();
     }
-    /*
+
     for (let i = 0; i < cantObstaculos; i++) {
       obstaculos[i].display();
     }
-    */
+
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
@@ -220,7 +228,6 @@ function draw() {
   }
 
   if (estado == "nivel3") {
-
     //efecto movimiento camara
     if(posx<2600){
       translate(-posx, 0);
@@ -237,7 +244,9 @@ function draw() {
     personaje.draw();
     personaje.mover();
     personaje.pegado();
-
+    for (let i = 0; i < cantObstaculos; i++) {
+      obstaculos[i].display();
+    }
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
@@ -299,7 +308,7 @@ function draw() {
     }
   }
 
-  
+
 
 
 

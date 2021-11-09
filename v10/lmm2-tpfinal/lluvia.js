@@ -1,7 +1,7 @@
 class Lluvia {
   constructor() {
     //Posicion de la lluvia
-    this.x = random(width * 3, width * 5);
+    this.x = random(width * 3, width * 7);
     this.y = random(40, height - 40);
     //Velocidad
     this.speed = random(8, 10);
@@ -9,6 +9,7 @@ class Lluvia {
     this.tam = random(8, 15);
     //Variable boolean para dibujar o no a la lluvia
     this.hide = false;
+    this.show=false;
   }
 
   display() {
@@ -22,7 +23,11 @@ class Lluvia {
   llover() {
     if (this.x > 0) {
       //Si el personaje pasa este limite (width*1,5) sale una ráfaga de lluvia
-      if (personaje.x > width * 1.5) {
+      if(personaje.x>width*1.5){
+        this.show=true;
+      }
+
+      if (this.show==true) {
         if (this.hide == false) {
           this.x = this.x - this.speed;
         }
@@ -30,7 +35,7 @@ class Lluvia {
     } else {
       //La lluvia vuelve a su lugar original y se oculta cuando llega al final del nivel (width=0).
       this.x = random(width * 3, width * 3.6);
-      this.hide = true;
+      this.hide = false;
     }
   }
 

@@ -7,10 +7,18 @@ class Obstaculos {
   }
 
   display() {
-    //rect(this.x, this.y, moco.width, moco.height);
-    image(moco, this.x, this.y)
+
+    if(estado=="nivel1"){
+      image(moco, this.x, this.y);
+    }
+    else if(estado=="nivel2"){
+      image(saliva, this.x, this.y);
+    }
+    else if(estado=="nivel3"){
+      image(saliva, this.x, this.y);
+    }
+
   }
   reset(){
-    obstaculos = [];
   }
 }
