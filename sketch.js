@@ -78,7 +78,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "prueba";
+  estado = "menu";
   nubes[0].resize(50,50);
 
   nubes[1].resize(80,80);
@@ -117,7 +117,7 @@ function draw() {
   if (estado == "menu") {
     escenario.menu();
     if (keyDown('ENTER')) {
-      estado = "animacion";
+      estado = "nivel1";
     }
   }
 
