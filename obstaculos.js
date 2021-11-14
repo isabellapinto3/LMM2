@@ -20,5 +20,10 @@ class Obstaculos {
     }
 
   }
-  reset() {}
+  reset() {
+    this.adentro=false;
+
+          this.x = random(200, width * 3 - 800);
+          this.y = random(280, height);
+  }
 }

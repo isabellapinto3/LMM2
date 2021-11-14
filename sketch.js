@@ -1,7 +1,7 @@
 //variables globales
 var posx;
 var posy;
-let bg,bg2,bg3,bg4;
+let bg, bg2, bg3, bg4;
 let hud;
 let walls;
 let cantObstaculos;
@@ -44,11 +44,11 @@ function preload() {
 
   //hud
   hudBarra = loadImage('img/hud.png');
-  for(let i = 0;i<6;i++){
-    hudcara[i]=loadImage("img/hudcara"+i+".png");
+  for (let i = 0; i < 6; i++) {
+    hudcara[i] = loadImage("img/hudcara" + i + ".png");
   }
-  for(let i = 0;i<3;i++){
-    nubes[i]=loadImage("img/nubetoxica"+i+".png");
+  for (let i = 0; i < 3; i++) {
+    nubes[i] = loadImage("img/nubetoxica" + i + ".png");
   }
 
   //niveles
@@ -62,11 +62,11 @@ function preload() {
   //obstaculos
 
   //obstimg = loadImage('img/rock0.png');
-  for(let i = 0;i<3;i++){
-    rock[i]=loadImage("img/rock"+i+".png");
+  for (let i = 0; i < 3; i++) {
+    rock[i] = loadImage("img/rock" + i + ".png");
   }
   moco = loadImage('img/moco1.png');
-  saliva=loadImage("img/saliva.png");
+  saliva = loadImage("img/saliva.png");
 
   //sonidos
   picar = loadSound("sound/picar.mp3");
@@ -77,12 +77,12 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "nivel3";
-  nubes[0].resize(50,50);
+  estado = "nivel1";
+  nubes[0].resize(50, 50);
 
-  nubes[1].resize(80,80);
+  nubes[1].resize(80, 80);
 
-  nubes[2].resize(70,70);
+  nubes[2].resize(70, 70);
   //Cantidad de particulas, mocos y puntos negros
   cantLluvia = 40;
   cantObstaculos = 10;
@@ -109,8 +109,8 @@ function setup() {
 
 
 function draw() {
-  if(estado=="prueba"){
-      animacionFinal.display();
+  if (estado == "prueba") {
+    animacionFinal.display();
   }
 
   if (estado == "menu") {
@@ -120,7 +120,7 @@ function draw() {
     }
   }
 
-  if(estado=="animacion"){
+  if (estado == "animacion") {
     animacion.display();
   }
 
@@ -128,9 +128,9 @@ function draw() {
   if (estado == "nivel1") {
     //efecto movimiento camara
 
-    if(posx<2600){
+    if (posx < 2600) {
       translate(-posx, 0);
-    } else{
+    } else {
       translate(-2600, 0);
     }
 
@@ -166,17 +166,21 @@ function draw() {
 
     //cambio nivel2 //boca
     //transparencia
-    if(posx > 2600){
+    if (posx > 2600) {
       fill(200, 200, 200, 40);
-      ellipse(width*3-400, 200, 100, 100);
+      ellipse(width * 3 - 400, 200, 100, 100);
     }
     if (keyDown('w')) {
-      if(posx >3200 && posx<3300 && personaje.y < 280){
+      if (posx > 3200 && posx < 3300 && personaje.y < 280) {
 
         estado = "nivel2"
         personaje.reset();
         for (let i = 0; i < cantPuntos; i++) {
           puntos[i].reset();
+        }
+
+        for (let i = 0; i < cantObstaculos; i++) {
+          obstaculos[i].reset();
         }
         console.log(estado);
       }
@@ -184,16 +188,22 @@ function draw() {
 
     //cambio nivel3 //traquea
     //transparencia
-    if(posx > 2600){
+    if (posx > 2600) {
       fill(200, 200, 200, 40);
-      rect(width*3-100, 260, width*3, height);
+      rect(width * 3 - 100, 260, width * 3, height);
     }
     if (keyDown('d')) {
-      if(posx >3670 && personaje.y < 500 && personaje.y >360){
+      if (posx > 3670 && personaje.y < 500 && personaje.y > 360) {
 
         estado = "nivel3"
         personaje.reset();
         console.log(estado);
+        for (let i = 0; i < cantPuntos; i++) {
+          puntos[i].reset();
+        }
+        for (let i = 0; i < cantObstaculos; i++) {
+          obstaculos[i].reset();
+        }
       }
     }
     //Cursor
@@ -205,9 +215,9 @@ function draw() {
   if (estado == "nivel2") {
 
     //efecto movimiento camara
-    if(posx<2600){
+    if (posx < 2600) {
       translate(-posx, 0);
-    } else{
+    } else {
       translate(-2600, 0);
     }
 
@@ -237,16 +247,22 @@ function draw() {
 
     //cambio nivel4 - final
     //transparencia
-    if(posx > 2600){
+    if (posx > 2600) {
       fill(200, 200, 200, 40);
-      rect(width*3-100, 260, width*3, height);
+      rect(width * 3 - 100, 260, width * 3, height);
     }
     if (keyDown('d')) {
-      if(posx >3670 && personaje.y < 500 && personaje.y >360){
+      if (posx > 3670 && personaje.y < 500 && personaje.y > 360) {
 
         estado = "nivel4"
         personaje.reset();
         console.log(estado);
+        for (let i = 0; i < cantPuntos; i++) {
+          puntos[i].reset();
+        }
+        for (let i = 0; i < cantObstaculos; i++) {
+          obstaculos[i].reset();
+        }
       }
     }
 
@@ -254,9 +270,9 @@ function draw() {
 
   if (estado == "nivel3") {
     //efecto movimiento camara
-    if(posx<2600){
+    if (posx < 2600) {
       translate(-posx, 0);
-    } else{
+    } else {
       translate(-2600, 0);
     }
 
@@ -280,12 +296,12 @@ function draw() {
 
     //cambio nivel4 - final
     //transparencia
-    if(posx > 2600){
+    if (posx > 2600) {
       fill(200, 200, 200, 40);
-      rect(width*3-100, 260, width*3, height);
+      rect(width * 3 - 100, 260, width * 3, height);
     }
     if (keyDown('d')) {
-      if(posx >3670 && personaje.y < 500 && personaje.y >360){
+      if (posx > 3670 && personaje.y < 500 && personaje.y > 360) {
 
         estado = "nivel4"
         personaje.reset();
@@ -296,9 +312,9 @@ function draw() {
 
   if (estado == "nivel4") {
     //efecto movimiento camara
-    if(posx<2600){
+    if (posx < 2600) {
       translate(-posx, 0);
-    } else{
+    } else {
       translate(-2600, 0);
     }
 
@@ -319,25 +335,21 @@ function draw() {
   }
   pop()
 
-  if(estado=="nivel1"||estado=="nivel2"||estado=="nivel3"||estado=="nivel4"){
+  if (estado == "nivel1" || estado == "nivel2" || estado == "nivel3" || estado == "nivel4") {
     hud.display();
     hud.hudImagenes();
   }
 
   //menu perdiste
-  if(estado=="perdiste"){
-    image(perdiste,0,0);
+  if (estado == "perdiste") {
+    image(perdiste, 0, 0);
 
     if (keyDown(' ')) {
-      estado="nivel1";
+      estado = "nivel1";
       hud.reset();
       personaje.reset();
     }
   }
-
-
-
-
 
 }
 
