@@ -13,10 +13,12 @@ let hudcara = [];
 let nubes = [];
 let hudBarra;
 
+
 //Clases
 let personaje;
 let escenario;
 let animacion;
+let animacionFinal;
 let obstaculos = [];
 let puntos = [];
 let lluvia = [];
@@ -35,7 +37,11 @@ function preload() {
   picaranimacion = loadAnimation("img/astro4.png", "img/astro5.png");
 
   //Comic
-  comic = loadImage("img/comic.png")
+  comic = loadImage("img/comic.png");
+
+  //Animacion final
+  avionfrontal = loadImage("img/avion.png");
+  festejo = loadImage("img/festejo.png");
 
   //hud
   hudBarra = loadImage('img/hud.png');
@@ -72,7 +78,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "menu";
+  estado = "prueba";
   nubes[0].resize(50,50);
 
   nubes[1].resize(80,80);
@@ -87,6 +93,7 @@ function setup() {
   personaje = new Personaje();
   escenario = new Escenario();
   animacion = new Animacion();
+  animacionFinal = new AnimacionFinal();
   hud = new Hud();
 
   for (let i = 0; i < cantObstaculos; i++) {
@@ -103,6 +110,10 @@ function setup() {
 
 
 function draw() {
+  if(estado=="prueba"){
+      animacionFinal.display();
+  }
+
   if (estado == "menu") {
     escenario.menu();
     if (keyDown('ENTER')) {
