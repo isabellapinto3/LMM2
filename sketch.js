@@ -77,7 +77,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "nivel3";
+  estado = "nivel4";
   nubes[0].resize(50,50);
 
   nubes[1].resize(80,80);
@@ -128,6 +128,7 @@ function draw() {
   if (estado == "nivel1") {
     //efecto movimiento camara
 
+    
     if(posx<2600){
       translate(-posx, 0);
     } else{
@@ -296,10 +297,10 @@ function draw() {
 
   if (estado == "nivel4") {
     //efecto movimiento camara
-    if(posx<2600){
+    if(posx<1300){
       translate(-posx, 0);
     } else{
-      translate(-2600, 0);
+      translate(-1300, 0);
     }
 
     background(0, 0, 0);
