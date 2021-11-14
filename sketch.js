@@ -59,8 +59,8 @@ function preload() {
   walls = loadImage('img/walls.png');
   perdiste = loadImage("img/perdiste.png");
   menu = loadImage("img/menu.png");
-  //obstaculos
 
+  //obstaculos
   //obstimg = loadImage('img/rock0.png');
   for (let i = 0; i < 3; i++) {
     rock[i] = loadImage("img/rock" + i + ".png");
@@ -240,6 +240,12 @@ function draw() {
     personaje.draw();
     personaje.mover();
     personaje.pegado();
+    personaje.llovido();
+
+    for (let i = 0; i < cantLluvia; i++) {
+      lluvia[i].display();
+      lluvia[i].llover();
+    }
 
     //Cursor
     fill(20);
@@ -281,15 +287,23 @@ function draw() {
     if (!cueva.isPlaying()) {
       cueva.play();
     }
-
+    escenario.nivel3();
     for (let i = 0; i < cantObstaculos; i++) {
       obstaculos[i].display();
     }
-
-    escenario.nivel3();
+    for (let i = 0; i < cantPuntos; i++) {
+      puntos[i].display();
+    }
     personaje.draw();
     personaje.mover();
     personaje.pegado();
+    personaje.llovido();
+
+    for (let i = 0; i < cantLluvia; i++) {
+      lluvia[i].display();
+      lluvia[i].llover();
+    }
+
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
@@ -327,7 +341,18 @@ function draw() {
     personaje.draw();
     personaje.mover();
     personaje.pegado();
+    personaje.llovido();
 
+    for (let i = 0; i < cantLluvia; i++) {
+      lluvia[i].display();
+      lluvia[i].llover();
+    }
+    for (let i = 0; i < cantObstaculos; i++) {
+      obstaculos[i].display();
+    }
+    for (let i = 0; i < cantPuntos; i++) {
+      puntos[i].display();
+    }
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
