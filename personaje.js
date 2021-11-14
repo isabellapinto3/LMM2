@@ -51,8 +51,15 @@ class Personaje {
       //Dibuja sprite para la izquierda
       walkLeft.draw(this.x, this.y);
     } else if (keyDown('d')) {
-      if (this.x < width * 3 - this.w) {
-        this.x += this.speed;
+      if(estado != "nivel4"){
+        if (this.x < width * 3 - this.w) {
+          this.x += this.speed;
+        }
+      }
+      if (estado == "nivel4"){
+        if (this.x < width * 2 - this.w) {
+          this.x += this.speed;
+        }
       }
       //Dibuja sprite para la derecha
       walkRight.draw(this.x, this.y);
