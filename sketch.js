@@ -13,7 +13,6 @@ let hudcara = [];
 let nubes = [];
 let hudBarra;
 
-
 //Clases
 let personaje;
 let escenario;
@@ -66,7 +65,7 @@ function preload() {
   for(let i = 0;i<3;i++){
     rock[i]=loadImage("img/rock"+i+".png");
   }
-  moco = loadImage('img/moco.png');
+  moco = loadImage('img/moco1.png');
   saliva=loadImage("img/saliva.png");
 
   //sonidos
@@ -78,7 +77,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "prueba";
+  estado = "menu";
   nubes[0].resize(50,50);
 
   nubes[1].resize(80,80);
@@ -117,7 +116,7 @@ function draw() {
   if (estado == "menu") {
     escenario.menu();
     if (keyDown('ENTER')) {
-      estado = "animacion";
+      estado = "nivel1";
     }
   }
 
