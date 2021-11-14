@@ -57,7 +57,7 @@ class Hud {
   }
 
   reset(){
-    this.tiempo = 0;
+    this.tiempo = 2500;
     this.limite = 5000;
   }
 

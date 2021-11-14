@@ -19,6 +19,8 @@ class Lluvia {
     }
   }
 
+
+
   llover() {
     if (this.x > 0) {
       //Si el personaje pasa este limite (width*1,5) sale una ráfaga de lluvia
@@ -38,6 +40,12 @@ class Lluvia {
     }
   }
 
-
+  reset(){
+    this.x = random(width, width * 2);
+    this.y=random(height/2-50,height/2+20);
+    this.speed = random(6, 8);
+    this.tam = random(8, 15);
+    this.selector = int(random(0,3));
+  }
 
 }

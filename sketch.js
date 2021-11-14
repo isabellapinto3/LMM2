@@ -128,7 +128,7 @@ function draw() {
   if (estado == "nivel1") {
     //efecto movimiento camara
 
-    
+
     if(posx<2600){
       translate(-posx, 0);
     } else {
@@ -270,6 +270,9 @@ function draw() {
         for (let i = 0; i < cantObstaculos; i++) {
           obstaculos[i].reset();
         }
+        for (let i = 0; i < cantLluvia; i++) {
+          lluvia[i].reset();
+        }
       }
     }
 
@@ -320,6 +323,15 @@ function draw() {
 
         estado = "nivel4"
         personaje.reset();
+              for (let i = 0; i < cantPuntos; i++) {
+                puntos[i].reset();
+              }
+              for (let i = 0; i < cantObstaculos; i++) {
+                obstaculos[i].reset();
+              }
+              for (let i = 0; i < cantLluvia; i++) {
+                lluvia[i].reset();
+              }
         console.log(estado);
       }
     }
@@ -327,7 +339,7 @@ function draw() {
 
   if (estado == "nivel4") {
     //efecto movimiento camara
- 
+
     if(posx<1300){
       translate(-posx, 0);
     } else{
@@ -349,6 +361,7 @@ function draw() {
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].display();
       lluvia[i].llover();
+
     }
     for (let i = 0; i < cantObstaculos; i++) {
       obstaculos[i].display();
@@ -359,6 +372,9 @@ function draw() {
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
+
+    fill(255);
+    rect(2600-200,100,300);
 
   }
   pop()
