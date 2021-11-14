@@ -38,15 +38,27 @@ class Personaje {
   }
 
   mover() {
-    posx = this.x - 200;
+    
 
+    
+    posx = this.x - 200;
+    
     //console.log(posx);
 
     //MOVER PARA COSTADOS
+    
     if (keyDown('a')) {
-      if (this.x > 0) {
-        this.x -= this.speed;
+      if(estado != "nivel4"){
+        if (this.x > 25) {
+          this.x -= this.speed;
+        }
       }
+      if (estado == "nivel4"){
+        if (this.x > 20) {
+          this.x -= this.speed;
+        }
+      }
+      
 
       //Dibuja sprite para la izquierda
       walkLeft.draw(this.x, this.y);
