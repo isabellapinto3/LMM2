@@ -84,7 +84,7 @@ function setup() {
 
   nubes[2].resize(70,70);
   //Cantidad de particulas, mocos y puntos negros
-  cantLluvia = 50;
+  cantLluvia = 40;
   cantObstaculos = 10;
   cantPuntos = 3;
   print(estado);
@@ -175,6 +175,9 @@ function draw() {
 
         estado = "nivel2"
         personaje.reset();
+        for (let i = 0; i < cantPuntos; i++) {
+          puntos[i].reset();
+        }
         console.log(estado);
       }
     }
@@ -215,9 +218,7 @@ function draw() {
     }
 
     escenario.nivel2();
-    personaje.draw();
-    personaje.mover();
-    personaje.pegado();
+
     for (let i = 0; i < cantPuntos; i++) {
       puntos[i].display();
     }
@@ -225,6 +226,10 @@ function draw() {
     for (let i = 0; i < cantObstaculos; i++) {
       obstaculos[i].display();
     }
+
+    personaje.draw();
+    personaje.mover();
+    personaje.pegado();
 
     //Cursor
     fill(20);
@@ -260,13 +265,15 @@ function draw() {
     if (!cueva.isPlaying()) {
       cueva.play();
     }
+
+    for (let i = 0; i < cantObstaculos; i++) {
+      obstaculos[i].display();
+    }
+
     escenario.nivel3();
     personaje.draw();
     personaje.mover();
     personaje.pegado();
-    for (let i = 0; i < cantObstaculos; i++) {
-      obstaculos[i].display();
-    }
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);

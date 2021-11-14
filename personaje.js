@@ -87,7 +87,7 @@ class Personaje {
 
 
   reset(){
-    this.x =200;
+    this.x = 200;
     this.y = height / 2 +100;
   }
 
