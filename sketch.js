@@ -50,6 +50,7 @@ function preload() {
 
   //hud
   hudBarra = loadImage('img/hud.png');
+  hudtop= loadImage("img/hudtop.png");
   for (let i = 0; i < 6; i++) {
     hudcara[i] = loadImage("img/hudcara" + i + ".png");
   }

@@ -1,8 +1,8 @@
 class Hud {
   constructor() {
-    this.tiempo = 4000;
+    this.tiempo = 2500;
     this.limite = 5000;
-    this.ancho = 350;
+    this.ancho = 230;
     this.x = width / 2 - this.ancho / 2;
     this.y = 50;
     this.contador = 0;
@@ -16,12 +16,19 @@ class Hud {
     this.mapeoRojo = map(this.tiempo, 0, this.limite, 100, 0);
     this.mapeoVerde = map(this.tiempo, 0, this.limite, 200, 0);
     this.color = color(this.mapeoRojo, this.mapeoVerde, this.mapeoAzul);
-    fill(this.color);
-    rect(this.x + 80, this.y, this.ancho - this.mapeo, 33, 10);
 
     fill(0);
     stroke(0);
-    image(hudBarra, this.x + 80, this.y - 18)
+    image(hudBarra, this.x + 80, this.y-8)
+
+    fill(this.color);
+    noStroke();
+    rect(this.x + 120, this.y, this.ancho - this.mapeo, 30, 10);
+    push();
+    tint(255,100);
+    image(hudtop,this.x + 120, this.y);
+    pop();
+
     //image(hudcara[0],100,100);
     //rect(this.x, this.y, this.ancho, 10, 20);
 
