@@ -84,7 +84,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "nivel4";
+  estado = "nivel1";
   nubes[0].resize(50, 50);
 
   nubes[1].resize(80, 80);

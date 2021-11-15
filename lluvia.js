@@ -24,7 +24,7 @@ class Lluvia {
   llover() {
     if (this.x > 0) {
       //Si el personaje pasa este limite (width*1,5) sale una ráfaga de lluvia
-      if(personaje.x>width){
+      if(personaje.x>width/4){
         this.show=true;
       }
 
