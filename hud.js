@@ -60,7 +60,7 @@ class Hud {
       console.log('4');
       image(hudcara[4], this.x, this.y - 18);
     }
-    if (this.tiempo > 4500 && this.tiempo < 5000) {
+    if (this.tiempo > 4500 && this.tiempo < 6000) {
       console.log('5');
       image(hudcara[5], this.x, this.y - 18);
     }
