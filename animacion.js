@@ -10,8 +10,6 @@ class Animacion {
 
     this.tiempo+=0.05;
     image(comic,this.x,this.y);
-    fill(0);
-    text(this.tiempo,10,50);
     //FADE IN
     //fill(255,100);
     //rect(0,0,1300,600);

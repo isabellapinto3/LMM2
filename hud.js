@@ -1,7 +1,7 @@
 class Hud {
   constructor() {
     this.tiempo = 2500;
-    this.limite = 5000;
+    this.limite = 20000;
     this.ancho = 230;
     this.x = width / 2 - this.ancho / 2;
     this.y = 50;

@@ -84,7 +84,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "nivel3";
+  estado = "nivel4";
   nubes[0].resize(50, 50);
 
   nubes[1].resize(80, 80);
@@ -364,6 +364,7 @@ function draw() {
     personaje.pegado();
     personaje.llovido();
     boss.display();
+    boss.mapeoVida();
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].display();
       lluvia[i].llover();
@@ -391,7 +392,7 @@ function draw() {
   }
 
   if(estado=="nivel4"){
-    boss.mapeoVida();
+
   }
 
   //menu perdiste
