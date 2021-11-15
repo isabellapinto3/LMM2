@@ -13,8 +13,7 @@ class AnimacionFinal {
     if(this.agrandar==true){
     push();
     imageMode(CENTER);
-    image(bg,width/2,height/2);
-    image(avionfrontal,width/2,this.y,this.ancho,this.alto);
+    image(avionfrontal,2600-this.ancho/3,this.y,this.ancho,this.alto);
     pop();
 
     this.y-=this.velocidad;
@@ -22,9 +21,7 @@ class AnimacionFinal {
     this.alto+=this.crecimientoh;
 }
     if(this.ancho>2500){
-      background(255);
-      this.agrandar=false;
-      image(festejo,-10,0);
+      estado ="final";
     }
   }
 

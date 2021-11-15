@@ -15,6 +15,7 @@ let hudBarra;
 
 //Clases
 let personaje;
+let boss;
 let escenario;
 let animacion;
 let animacionFinal;
@@ -37,6 +38,11 @@ function preload() {
 
   //Comic
   comic = loadImage("img/comic.png");
+
+  //Chimenea
+  chimenea = loadImage("img/chimenea.png");
+
+  chimenea2 = loadImage("img/chimenea2.png");
 
   //Animacion final
   avionfrontal = loadImage("img/avion.png");
@@ -77,7 +83,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "nivel1";
+  estado = "nivel3";
   nubes[0].resize(50, 50);
 
   nubes[1].resize(80, 80);
@@ -90,6 +96,7 @@ function setup() {
   print(estado);
   //Declaro clases
   personaje = new Personaje();
+  boss = new Boss();
   escenario = new Escenario();
   animacion = new Animacion();
   animacionFinal = new AnimacionFinal();
@@ -109,9 +116,7 @@ function setup() {
 
 
 function draw() {
-  if (estado == "prueba") {
-    animacionFinal.display();
-  }
+
 
   if (estado == "menu") {
     escenario.menu();
@@ -357,12 +362,12 @@ function draw() {
     personaje.mover();
     personaje.pegado();
     personaje.llovido();
-
+    boss.display();
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].display();
       lluvia[i].llover();
-
     }
+    boss.display2();
     for (let i = 0; i < cantObstaculos; i++) {
       obstaculos[i].display();
     }
@@ -373,8 +378,8 @@ function draw() {
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
 
-    fill(255);
-    rect(2600-200,100,300);
+
+
 
   }
   pop()
@@ -382,6 +387,10 @@ function draw() {
   if (estado == "nivel1" || estado == "nivel2" || estado == "nivel3" || estado == "nivel4") {
     hud.display();
     hud.hudImagenes();
+  }
+
+  if(estado=="nivel4"){
+    boss.mapeoVida();
   }
 
   //menu perdiste
@@ -395,10 +404,16 @@ function draw() {
     }
   }
 
+  if(estado=="final"){
+    background(255);
+    image(festejo,-10,0);
+  }
+
 }
 
 function mousePressed() {
   for (let i = 0; i < cantPuntos; i++) {
     puntos[i].click();
   }
+    boss.click();
 }
