@@ -5,7 +5,7 @@ class Boss {
 
     //Posicion del punto
     this.x = 2600 - this.ancho;
-    this.y = 150;
+    this.y = 120;
     //Si el punto se dibuja o no
     this.vivo = true;
 
