@@ -104,23 +104,27 @@ class Escenario {
   }
 
   creditos(){
+    if (!musica.isPlaying()) {
+      musica.play();
+    }
     push();
     fill(0);
     this.subir-=1.5;
     textSize(60);
     textAlign(CENTER);
     textFont(font);
-    
+
     text("HIPOXIA",width/2+width/4-50,this.subir);
         textSize(30);
     text("Integrantes",width/2+width/4-50,this.subir+50);
     image(credito1,width/2+70,this.subir+100)
     image(credito2,width/2+70,this.subir+500)
-    image(credito3,width/2+70,this.subir+900)    
+    image(credito3,width/2+70,this.subir+900)
     pop();
 
     if(this.subir+1200 < 0){
       estado="menu";
+      musica.stop();
     }
   }
 
