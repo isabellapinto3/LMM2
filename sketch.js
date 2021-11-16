@@ -52,7 +52,7 @@ function preload() {
   chimenea = loadImage("img/chimenea.png");
 
   chimenea2 = loadImage("img/chimenea2.png");
-
+  vignette = loadImage("img/vignette.png");
   //Animacion final
   avionfrontal = loadImage("img/avion.png");
   festejo = loadImage("img/festejo.png");
@@ -393,14 +393,15 @@ function draw() {
     personaje.llovido();
     boss.display();
     boss.mapeoVida();
+
+    for (let i = 0; i < cantPuntos; i++) {
+      puntos[i].display();
+    }
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].display();
       lluvia[i].llover();
     }
     boss.display2();
-    for (let i = 0; i < cantPuntos; i++) {
-      puntos[i].display();
-    }
     escenario.nivel4top();
     //Cursor
     fill(240);
@@ -420,6 +421,7 @@ function draw() {
   if (estado == "nivel1" || estado == "nivel2" || estado == "nivel3" || estado == "nivel4") {
     hud.display();
     hud.hudImagenes();
+    hud.vignette();
   }
 
 
@@ -431,6 +433,9 @@ function draw() {
       hud.reset();
       personaje.reset();
       maquina.stop();
+      for (let i = 0; i < cantLluvia; i++) {
+        lluvia[i].reset2();
+      }
     }
   }
 
