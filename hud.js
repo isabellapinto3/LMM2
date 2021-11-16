@@ -19,7 +19,7 @@ class Hud {
 
     fill(0);
     stroke(0);
-    image(hudBarra, this.x + 80, this.y-8)
+    image(hudBarra, this.x + 80, this.y-8);
 
     fill(this.color);
     noStroke();
