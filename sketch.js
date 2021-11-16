@@ -96,8 +96,9 @@ function preload() {
   ruido = loadSound("sound/ruido.mp3");
   cueva = loadSound("sound/cueva.mp3");
   cueva2 = loadSound("sound/cueva2.mp3");
-  tos = loadSound("sound/tos.mp3")
-  maquina = loadSound("sound/maquina.mp3")
+  tos = loadSound("sound/tos.mp3");
+  maquina = loadSound("sound/maquina.mp3");
+    musica = loadSound("sound/musica.mp3");
 }
 
 function setup() {
@@ -448,7 +449,9 @@ function draw() {
     hud.reset();
     personaje.reset();
     maquina.stop();
-
+    for (let i = 0; i < cantLluvia; i++) {
+      lluvia[i].reset2();
+    }
     escenario.creditos();
   }
 

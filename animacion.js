@@ -11,7 +11,9 @@ class Animacion {
   }
 
   display() {
-
+    if (!musica.isPlaying()) {
+      musica.play();
+    }
 
     this.tiempo+=0.05;
     image(comic,this.x,this.y);
@@ -30,6 +32,7 @@ class Animacion {
     if(mouseX>width-130 && mouseX<width && mouseY>height-30 && mouseY<height){
       this.colorhover=color(255,0,0);
       estado="nivel1"
+              musica.stop();
     }}
 
     //LINEA SUPERIOR
@@ -56,6 +59,9 @@ class Animacion {
     if(this.tiempo>100){
       this.tiempo=100;
       estado = "nivel1";
+
+        musica.stop();
+
     }
   }
 
