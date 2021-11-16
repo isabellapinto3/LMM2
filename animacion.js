@@ -4,15 +4,33 @@ class Animacion {
     this.x=0;
     this.y=-25;
     this.velocidad=6;
+
+    this.botonx=width-130;
+    this.botony=height-20;
+
   }
 
   display() {
+
 
     this.tiempo+=0.05;
     image(comic,this.x,this.y);
     //FADE IN
     //fill(255,100);
     //rect(0,0,1300,600);
+    fill(255,0,0);
+    //rect(this.botonx,this.botony,50,20);
+
+    this.colorhover=color(0,0,0);
+    fill(this.colorhover);
+
+    text("Saltear Animación", this.botonx, this.botony);
+    ellipse(mouseX,mouseY,5,5);
+    if(mouseIsPressed){
+    if(mouseX>width-130 && mouseX<width && mouseY>height-30 && mouseY<height){
+      this.colorhover=color(255,0,0);
+      estado="nivel1"
+    }}
 
     //LINEA SUPERIOR
     if(this.tiempo<8){
