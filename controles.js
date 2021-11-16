@@ -10,8 +10,8 @@ class Controles{
     display(){
       this.x+=this.speedx;
 
-      fill(255);
-      rect(this.x,this.y,50,50);
+      
+      image(tutorial,this.x,this.y);
 
       if(this.x>width/3){
         this.y-=this.speedy;

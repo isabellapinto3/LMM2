@@ -48,6 +48,9 @@ function preload() {
   //Comic
   comic = loadImage("img/comic.png");
 
+  //tutorial
+  tutorial =loadImage("img/tutorial.png")
+
   //Chimenea
   chimenea = loadImage("img/chimenea.png");
 
