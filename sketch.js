@@ -29,12 +29,21 @@ let walkRight;
 let walkLeft;
 let picaranimacion;
 
+
+
 function preload() {
   //Cargo imagenes astronauta
   standing = loadAnimation('img/astro0.png');
   walkRight = loadAnimation("img/astro1.png", "img/astro2.png", "img/astro3.png");
   walkLeft = loadAnimation("img/astro6.png", "img/astro7.png", "img/astro8.png");
   picaranimacion = loadAnimation("img/astro4.png", "img/astro5.png");
+
+  //font
+  font = loadFont('font/letra.otf');
+  //creditos
+  credito1 = loadImage("img/1.png");
+  credito2 = loadImage("img/2.png");
+  credito3 = loadImage("img/3.png");
 
   //Comic
   comic = loadImage("img/comic.png");
