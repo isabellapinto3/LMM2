@@ -3,7 +3,6 @@ var posx;
 var posy;
 let bg, bg2, bg3, bg4;
 let hud;
-let walls;
 let cantObstaculos;
 let cantPuntos;
 let cantLluvia;
@@ -68,7 +67,7 @@ function preload() {
   bg3Top = loadImage('img/background3top.png');
   bg4 = loadImage('img/background4.png');
     bg4Top = loadImage('img/background4top.png');
-  walls = loadImage('img/walls.png');
+
   perdiste = loadImage("img/perdiste.png");
   menu = loadImage("img/menu.png");
 
