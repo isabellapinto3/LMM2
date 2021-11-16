@@ -48,4 +48,15 @@ class Lluvia {
     this.selector = int(random(0,3));
   }
 
+  reset2(){
+    //Posicion de la lluvia
+    this.x = random(width * 3, width * 7);
+    this.y = random(40, height - 40);
+    //Velocidad
+    this.speed = random(6, 8);
+    //Tamaño
+    this.tam = random(8, 15);
+    this.selector=int(random(0,3));
+  }
+
 }

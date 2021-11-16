@@ -46,7 +46,7 @@ class Puntos {
       if (mouseX + posx > this.x && mouseX + posx < this.x + rock[0].width && mouseY > this.y && mouseY < this.y + rock[0].height) {
         this.vida--;
         this.contador++;
-        hud.tiempo -= 70;
+        hud.tiempo -= 150;
 
         //Reproduzco sonido
         ruido.play();
