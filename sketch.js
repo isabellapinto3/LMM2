@@ -384,14 +384,15 @@ function draw() {
     personaje.llovido();
     boss.display();
     boss.mapeoVida();
+
+    for (let i = 0; i < cantPuntos; i++) {
+      puntos[i].display();
+    }
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].display();
       lluvia[i].llover();
     }
     boss.display2();
-    for (let i = 0; i < cantPuntos; i++) {
-      puntos[i].display();
-    }
     escenario.nivel4top();
     //Cursor
     fill(240);
@@ -422,6 +423,9 @@ function draw() {
       hud.reset();
       personaje.reset();
       maquina.stop();
+      for (let i = 0; i < cantLluvia; i++) {
+        lluvia[i].reset2();
+      }
     }
   }
 
