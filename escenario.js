@@ -79,6 +79,10 @@ class Escenario {
     //image(walls, 0, 0);
   }
 
+  nivel2top(){
+      image(bg2Top, 0, 0);
+  }
+
   nivel2() {
     image(bg2, 0, 0);
   }

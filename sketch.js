@@ -62,6 +62,7 @@ function preload() {
   //niveles
   bg = loadImage('img/background.png');
   bg2 = loadImage('img/background2.png');
+    bg2Top = loadImage('img/background2top.png');
   bg3 = loadImage('img/background3.png');
   bg4 = loadImage('img/background4.png');
   walls = loadImage('img/walls.png');
@@ -99,6 +100,7 @@ function setup() {
   cantObstaculos = 10;
   cantPuntos = 3;
   print(estado);
+
   //Declaro clases
   personaje = new Personaje();
   boss = new Boss();
@@ -174,6 +176,9 @@ function draw() {
       lluvia[i].display();
       lluvia[i].llover();
     }
+
+
+
 
 
     //cambio nivel2 //boca
@@ -259,6 +264,10 @@ function draw() {
       lluvia[i].display();
       lluvia[i].llover();
     }
+    push();
+
+    escenario.nivel2top();
+    pop();
 
     //Cursor
     fill(20);
