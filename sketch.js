@@ -188,6 +188,8 @@ function draw() {
     //transparencia
     if (posx > 2600) {
       fill(200, 200, 200, 40);
+
+      noStroke();
       ellipse(width * 3 - 400, 200, 100, 100);
     }
     if (keyDown('w')) {
@@ -393,7 +395,8 @@ function draw() {
     }
     escenario.nivel4top();
     //Cursor
-    fill(20);
+    fill(240);
+    noStroke();
     ellipse(mouseX + posx, mouseY, 5, 5);
 
 
