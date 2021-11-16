@@ -19,6 +19,7 @@ let boss;
 let escenario;
 let animacion;
 let animacionFinal;
+let controles;
 let obstaculos = [];
 let puntos = [];
 let lluvia = [];
@@ -103,6 +104,7 @@ function setup() {
   boss = new Boss();
   escenario = new Escenario();
   animacion = new Animacion();
+  controles = new Controles();
   animacionFinal = new AnimacionFinal();
   hud = new Hud();
 
@@ -135,7 +137,7 @@ function draw() {
 
   push()
   if (estado == "nivel1") {
-    //efecto movimiento camara 
+    //efecto movimiento camara
     if(posx<2600){
       translate(-posx, 0);
     } else {
@@ -391,12 +393,16 @@ function draw() {
   }
   pop()
 
+  if(estado=="nivel1"){
+        controles.display();
+  }
+
   if (estado == "nivel1" || estado == "nivel2" || estado == "nivel3" || estado == "nivel4") {
     hud.display();
     hud.hudImagenes();
   }
 
- 
+
   //menu perdiste
   if (estado == "perdiste") {
     image(perdiste, 0, 0);

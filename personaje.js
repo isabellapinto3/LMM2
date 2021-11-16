@@ -78,8 +78,8 @@ class Personaje {
             this.x += this.speed;
           }
         }
-
       }
+      
       //Dibuja sprite para la derecha
       walkRight.draw(this.x, this.y);
     } else if (mouseIsPressed) {
