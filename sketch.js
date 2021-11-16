@@ -43,7 +43,7 @@ function preload() {
   chimenea = loadImage("img/chimenea.png");
 
   chimenea2 = loadImage("img/chimenea2.png");
-
+  vignette = loadImage("img/vignette.png");
   //Animacion final
   avionfrontal = loadImage("img/avion.png");
   festejo = loadImage("img/festejo.png");
@@ -412,6 +412,7 @@ function draw() {
   if (estado == "nivel1" || estado == "nivel2" || estado == "nivel3" || estado == "nivel4") {
     hud.display();
     hud.hudImagenes();
+    hud.vignette();
   }
 
 

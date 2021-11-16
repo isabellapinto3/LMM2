@@ -38,6 +38,15 @@ class Hud {
 
   }
 
+  vignette(){
+    this.mapVignette=map(this.tiempo,3000,this.limite,0,255);
+
+    if(this.limite>3000){
+    tint(255,this.mapVignette);
+    image(vignette,0,0);
+    }
+  }
+
   hudImagenes() {
 
     if (this.tiempo < 1000) {
