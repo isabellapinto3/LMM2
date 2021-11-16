@@ -98,7 +98,8 @@ function preload() {
   cueva2 = loadSound("sound/cueva2.mp3");
   tos = loadSound("sound/tos.mp3");
   maquina = loadSound("sound/maquina.mp3");
-    musica = loadSound("sound/musica.mp3");
+  musica = loadSound("sound/musica.mp3");
+  intro = loadSound("sound/intro.mp3");
 }
 
 function setup() {
