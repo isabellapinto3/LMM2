@@ -61,9 +61,11 @@ function preload() {
 
   //niveles
   bg = loadImage('img/background.png');
+    bgTop = loadImage('img/backgroundtop.png');
   bg2 = loadImage('img/background2.png');
     bg2Top = loadImage('img/background2top.png');
   bg3 = loadImage('img/background3.png');
+  bg3Top = loadImage('img/background3top.png');
   bg4 = loadImage('img/background4.png');
   walls = loadImage('img/walls.png');
   perdiste = loadImage("img/perdiste.png");
@@ -177,7 +179,7 @@ function draw() {
       lluvia[i].llover();
     }
 
-
+    escenario.nivel1top();
 
 
 
@@ -264,10 +266,10 @@ function draw() {
       lluvia[i].display();
       lluvia[i].llover();
     }
-    push();
+
 
     escenario.nivel2top();
-    pop();
+
 
     //Cursor
     fill(20);
@@ -328,7 +330,7 @@ function draw() {
       lluvia[i].display();
       lluvia[i].llover();
     }
-
+      escenario.nivel2top();
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
@@ -377,7 +379,6 @@ function draw() {
     escenario.nivel4();
     personaje.draw();
     personaje.mover();
-    personaje.pegado();
     personaje.llovido();
     boss.display();
     boss.mapeoVida();
@@ -386,9 +387,6 @@ function draw() {
       lluvia[i].llover();
     }
     boss.display2();
-    for (let i = 0; i < cantObstaculos; i++) {
-      obstaculos[i].display();
-    }
     for (let i = 0; i < cantPuntos; i++) {
       puntos[i].display();
     }
@@ -415,7 +413,6 @@ function draw() {
   //menu perdiste
   if (estado == "perdiste") {
     image(perdiste, 0, 0);
-
     if (keyDown(' ')) {
       estado = "nivel1";
       hud.reset();
@@ -426,10 +423,12 @@ function draw() {
 
   if(estado=="final"){
     background(255);
-    image(festejo,-10,0);
+    image(festejo,-250,0);
     hud.reset();
     personaje.reset();
     maquina.stop();
+
+    escenario.creditos();
   }
 
 }
