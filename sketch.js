@@ -144,6 +144,11 @@ function draw() {
 
   if (estado == "menu") {
     escenario.menu();
+    //reset
+    escenario.subir = 600;
+    boss.reset();
+    animacionFinal.reset();
+
     if (keyDown('ENTER')) {
       estado = "animacion";
     }

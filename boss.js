@@ -74,8 +74,10 @@ class Boss {
 }
 
   reset() {
+    this.play = false;
     this.vivo = true;
-    this.vida = 5;
+    this.vida = 20;
+    this.vidahud = 20;
     this.x = 2600 - 200;
     this.y = 100;
   }

@@ -97,15 +97,12 @@ class Personaje {
           this.y -= this.speed;
         }
       }
-      if(estado=="nivel4"){
-        if(this.x<width*2-200-this.w){
+      if (estado == "nivel4") {
+        if (this.y >= 260) { //limite superior
           this.y -= this.speed;
-        }else{
-          if(this.y < height/2){
-          this.y -= this.speed;
-          }
+        }
       }
-      }
+
     }
     if (keyDown('s')) {
       if (this.y < height - this.h) { //limite inferior
