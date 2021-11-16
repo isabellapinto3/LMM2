@@ -5,7 +5,7 @@ class Personaje {
     this.y = height / 2;
 
     //Velocidad personaje
-    this.speed = 14;
+    this.speed = 10;
 
     //Ancho del Personaje
     this.w = 27;
@@ -19,7 +19,7 @@ class Personaje {
   }
 
   pegado() {
-    this.speed = 14;
+    this.speed = 10;
     for (let i = 0; i < cantObstaculos; i++) {
       if (this.x > obstaculos[i].x && this.x < obstaculos[i].x + moco.width && this.y + this.h / 2 > obstaculos[i].y && this.y + this.h / 2 < obstaculos[i].y + moco.height) {
         this.speed = 1;
@@ -79,7 +79,7 @@ class Personaje {
           }
         }
       }
-      
+
       //Dibuja sprite para la derecha
       walkRight.draw(this.x, this.y);
     } else if (mouseIsPressed) {
