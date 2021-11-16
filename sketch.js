@@ -445,7 +445,9 @@ function draw() {
     hud.reset();
     personaje.reset();
     maquina.stop();
-
+    for (let i = 0; i < cantLluvia; i++) {
+      lluvia[i].reset2();
+    }
     escenario.creditos();
   }
 

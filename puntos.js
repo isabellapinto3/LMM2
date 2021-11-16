@@ -1,7 +1,7 @@
 class Puntos {
   constructor() {
     //Posicion del punto
-    this.x = random(200, width * 3 - 800);
+    this.x = random(200, width * 3 - 600);
     this.y = random(280, height);
 
     //Si el punto se dibuja o no
