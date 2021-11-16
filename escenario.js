@@ -8,7 +8,7 @@ class Escenario {
   menu() {
     image(menu, 0, 0);
 
-    push();
+    /*push();
     noFill();
     stroke(255);
     rectMode(CENTER);
@@ -70,7 +70,7 @@ class Escenario {
       //estado="creditos"
     }
     fill(255);
-    ellipse(mouseX, mouseY, 5, 5);
+    ellipse(mouseX, mouseY, 5, 5);*/
   }
 
   nivel1() {
