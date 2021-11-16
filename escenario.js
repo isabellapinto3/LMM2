@@ -99,6 +99,9 @@ class Escenario {
   nivel4() {
     image(bg4, 0, 0);
   }
+  nivel4top() {
+    image(bg4Top, 0, 0);
+  }
 
   creditos(){
     push();

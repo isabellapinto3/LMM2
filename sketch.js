@@ -67,6 +67,7 @@ function preload() {
   bg3 = loadImage('img/background3.png');
   bg3Top = loadImage('img/background3top.png');
   bg4 = loadImage('img/background4.png');
+    bg4Top = loadImage('img/background4top.png');
   walls = loadImage('img/walls.png');
   perdiste = loadImage("img/perdiste.png");
   menu = loadImage("img/menu.png");
@@ -390,6 +391,7 @@ function draw() {
     for (let i = 0; i < cantPuntos; i++) {
       puntos[i].display();
     }
+    escenario.nivel4top();
     //Cursor
     fill(20);
     ellipse(mouseX + posx, mouseY, 5, 5);
