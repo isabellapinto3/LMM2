@@ -19,7 +19,7 @@ class Personaje {
   }
 
   pegado() {
-    this.speed = 10;
+    this.speed =10;
     for (let i = 0; i < cantObstaculos; i++) {
       if (this.x > obstaculos[i].x && this.x < obstaculos[i].x + moco.width && this.y + this.h / 2 > obstaculos[i].y && this.y + this.h / 2 < obstaculos[i].y + moco.height) {
         this.speed = 1;

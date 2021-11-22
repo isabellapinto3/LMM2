@@ -2,7 +2,7 @@ class Lluvia {
   constructor() {
     //Posicion de la lluvia
     this.x = random(width * 3, width * 7);
-    this.y = random(40, height - 40);
+    this.y = random(45, height - 45);
     //Velocidad
     this.speed = random(6, 8);
     //Tamaño
@@ -51,7 +51,7 @@ class Lluvia {
   reset2(){
     //Posicion de la lluvia
     this.x = random(width * 3, width * 7);
-    this.y = random(40, height - 40);
+    this.y = random(45, height - 45);
     //Velocidad
     this.speed = random(6, 8);
     //Tamaño

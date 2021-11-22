@@ -106,11 +106,11 @@ function setup() {
   noCursor();
   createCanvas(1300, 600);
   estado = "menu";
-  nubes[0].resize(50, 50);
+  nubes[0].resize(30, 30);
 
-  nubes[1].resize(80, 80);
+  nubes[1].resize(40, 40);
 
-  nubes[2].resize(70, 70);
+  nubes[2].resize(50, 50);
   //Cantidad de particulas, mocos y puntos negros
   cantLluvia = 40;
   cantObstaculos = 10;
