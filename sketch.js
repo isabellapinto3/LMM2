@@ -56,6 +56,9 @@ function preload() {
 
   chimenea2 = loadImage("img/chimenea2.png");
   vignette = loadImage("img/vignette.png");
+
+  //Cursor
+  cursorimg = loadImage("img/cursor.png");
   //Animacion final
   avionfrontal = loadImage("img/avion.png");
   festejo = loadImage("img/festejo.png");
@@ -246,9 +249,10 @@ function draw() {
         }
       }
     }
-    //Cursor
-    fill(255);
-    ellipse(mouseX + posx, mouseY, 5, 5);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX+posx, mouseY);
+    pop();
 
   }
 
@@ -291,10 +295,10 @@ function draw() {
 
     escenario.nivel2top();
 
-
-    //Cursor
-    fill(20);
-    ellipse(mouseX + posx, mouseY, 5, 5);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX+posx, mouseY);
+    pop();
 
     //cambio nivel4 - final
     //transparencia
@@ -352,9 +356,10 @@ function draw() {
       lluvia[i].llover();
     }
       escenario.nivel2top();
-    //Cursor
-    fill(20);
-    ellipse(mouseX + posx, mouseY, 5, 5);
+      push();
+      tint(255,200);
+      image(cursorimg, mouseX+posx, mouseY);
+      pop();
 
     //cambio nivel4 - final
     //transparencia
@@ -414,9 +419,10 @@ function draw() {
     boss.display2();
     escenario.nivel4top();
     //Cursor
-    fill(240);
-    noStroke();
-    ellipse(mouseX + posx, mouseY, 5, 5);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX+posx, mouseY);
+    pop();
 
 
 
@@ -432,6 +438,10 @@ function draw() {
     hud.display();
     hud.hudImagenes();
     hud.vignette();
+
+    //cursor
+
+
   }
 
 

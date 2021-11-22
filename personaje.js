@@ -15,7 +15,7 @@ class Personaje {
   }
 
   draw() {
-
+    
   }
 
   pegado() {
