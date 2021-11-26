@@ -1,7 +1,7 @@
 class Lluvia {
   constructor() {
     //Posicion de la lluvia
-    this.x = random(width * 3, width * 7);
+    this.x = random(width * 3, width * 9);
     this.y = random(45, height - 45);
     //Velocidad
     this.speed = random(6, 8);
@@ -43,6 +43,14 @@ class Lluvia {
   reset(){
     this.x = random(width, width * 2);
     this.y=random(height/2-50,height/2+20);
+    this.speed = random(6, 8);
+    this.tam = random(8, 15);
+    this.selector = int(random(0,3));
+  }
+
+  reset1(){
+    this.x = random(width, width * 4);
+    this.y=random(45, height - 45);
     this.speed = random(6, 8);
     this.tam = random(8, 15);
     this.selector = int(random(0,3));

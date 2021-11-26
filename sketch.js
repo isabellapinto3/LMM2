@@ -219,7 +219,9 @@ function draw() {
         for (let i = 0; i < cantPuntos; i++) {
           puntos[i].reset();
         }
-
+        for (let i = 0; i < cantLluvia; i++) {
+          lluvia[i].reset1();
+        }
         for (let i = 0; i < cantObstaculos; i++) {
           obstaculos[i].reset();
         }
@@ -244,6 +246,9 @@ function draw() {
         }
         for (let i = 0; i < cantObstaculos; i++) {
           obstaculos[i].reset();
+        }
+        for (let i = 0; i < cantLluvia; i++) {
+          lluvia[i].reset1();
         }
       }
     }
