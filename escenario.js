@@ -7,7 +7,8 @@ class Escenario {
 
   menu() {
     image(menu, 0, 0);
-
+    tint(255,220);
+    enter.draw(200, 500);
     /*push();
     noFill();
     stroke(255);

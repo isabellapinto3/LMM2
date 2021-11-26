@@ -27,9 +27,8 @@ let lluvia = [];
 let standing;
 let walkRight;
 let walkLeft;
+let enter;
 let picaranimacion;
-
-
 
 function preload() {
   //Cargo imagenes astronauta
@@ -37,6 +36,7 @@ function preload() {
   walkRight = loadAnimation("img/astro1.png", "img/astro2.png", "img/astro3.png");
   walkLeft = loadAnimation("img/astro6.png", "img/astro7.png", "img/astro8.png");
   picaranimacion = loadAnimation("img/astro4.png", "img/astro5.png");
+  enter = loadAnimation("img/enter0.png","img/enter01.png", "img/enter1.png","img/enter2.png","img/enter21.png",);
 
   //font
   font = loadFont('font/letra.otf');
@@ -143,8 +143,6 @@ function setup() {
 
 
 function draw() {
-
-
   if (estado == "menu") {
     escenario.menu();
     //reset
@@ -221,7 +219,9 @@ function draw() {
         for (let i = 0; i < cantPuntos; i++) {
           puntos[i].reset();
         }
-
+        for (let i = 0; i < cantLluvia; i++) {
+          lluvia[i].reset1();
+        }
         for (let i = 0; i < cantObstaculos; i++) {
           obstaculos[i].reset();
         }
@@ -246,6 +246,9 @@ function draw() {
         }
         for (let i = 0; i < cantObstaculos; i++) {
           obstaculos[i].reset();
+        }
+        for (let i = 0; i < cantLluvia; i++) {
+          lluvia[i].reset1();
         }
       }
     }
