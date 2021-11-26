@@ -108,7 +108,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "menu";
+  estado = "nivel4";
   nubes[0].resize(30, 30);
 
   nubes[1].resize(40, 40);
@@ -149,6 +149,10 @@ function draw() {
     escenario.subir = 600;
     boss.reset();
     animacionFinal.reset();
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX, mouseY);
+    pop();
 
     if (keyDown('ENTER')) {
       estado = "animacion";
@@ -453,6 +457,10 @@ function draw() {
   //menu perdiste
   if (estado == "perdiste") {
     image(perdiste, 0, 0);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX, mouseY);
+    pop();
     if (keyDown(' ')) {
       estado = "nivel1";
       hud.reset();
@@ -468,6 +476,10 @@ function draw() {
   if(estado=="final"){
     background(255);
     image(festejo,-250,0);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX, mouseY);
+    pop();
     hud.reset();
     personaje.reset();
     maquina.stop();
@@ -477,7 +489,6 @@ function draw() {
     }
     escenario.creditos();
   }
-
 }
 
 function mousePressed() {
