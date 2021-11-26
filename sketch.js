@@ -103,6 +103,7 @@ function preload() {
   maquina = loadSound("sound/maquina.mp3");
   musica = loadSound("sound/musica.mp3");
   intro = loadSound("sound/intro.mp3");
+  rust=loadSound("sound/rust.mp3");
 }
 
 function setup() {
@@ -443,7 +444,9 @@ function draw() {
     hud.vignette();
 
     //cursor
-
+    if (!rust.isPlaying()) {
+      rust.play();
+    }
 
   }
 
@@ -456,6 +459,7 @@ function draw() {
       hud.reset();
       personaje.reset();
       maquina.stop();
+      rust.stop();
       for (let i = 0; i < cantLluvia; i++) {
         lluvia[i].reset2();
       }
@@ -468,6 +472,7 @@ function draw() {
     hud.reset();
     personaje.reset();
     maquina.stop();
+    rust.stop();
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].reset2();
     }
