@@ -36,7 +36,7 @@ function preload() {
   walkRight = loadAnimation("img/astro1.png", "img/astro2.png", "img/astro3.png");
   walkLeft = loadAnimation("img/astro6.png", "img/astro7.png", "img/astro8.png");
   picaranimacion = loadAnimation("img/astro4.png", "img/astro5.png");
-  enter = loadAnimation("img/enter0.png","img/enter01.png", "img/enter1.png","img/enter2.png","img/enter21.png",);
+  enter = loadAnimation("img/enter0.png", "img/enter01.png", "img/enter1.png", "img/enter2.png", "img/enter21.png",);
 
   //font
   font = loadFont('font/letra.otf');
@@ -49,7 +49,10 @@ function preload() {
   comic = loadImage("img/comic.png");
 
   //tutorial
-  tutorial =loadImage("img/tutorial.png")
+  tutorial = loadImage("img/tutorial.png")
+
+  //clicks
+  tutorialClick = loadImage("img/click/Click1.png")
 
   //Chimenea
   chimenea = loadImage("img/chimenea.png");
@@ -65,7 +68,7 @@ function preload() {
 
   //hud
   hudBarra = loadImage('img/hud.png');
-  hudtop= loadImage("img/hudtop.png");
+  hudtop = loadImage("img/hudtop.png");
   for (let i = 0; i < 6; i++) {
     hudcara[i] = loadImage("img/hudcara" + i + ".png");
   }
@@ -75,13 +78,13 @@ function preload() {
 
   //niveles
   bg = loadImage('img/background.png');
-    bgTop = loadImage('img/backgroundtop.png');
+  bgTop = loadImage('img/backgroundtop.png');
   bg2 = loadImage('img/background2.png');
-    bg2Top = loadImage('img/background2top.png');
+  bg2Top = loadImage('img/background2top.png');
   bg3 = loadImage('img/background3.png');
   bg3Top = loadImage('img/background3top.png');
   bg4 = loadImage('img/background4.png');
-    bg4Top = loadImage('img/background4top.png');
+  bg4Top = loadImage('img/background4top.png');
 
   perdiste = loadImage("img/perdiste.png");
   menu = loadImage("img/menu.png");
@@ -108,7 +111,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "menu";
+  estado = "nivel1";
   nubes[0].resize(30, 30);
 
   nubes[1].resize(40, 40);
@@ -162,13 +165,13 @@ function draw() {
   push()
   if (estado == "nivel1") {
     //efecto movimiento camara
-    if(posx<2600){
+    if (posx < 2600) {
       translate(-posx, 0);
     } else {
       translate(-2600, 0);
     }
-
-
+    
+    
 
     //translate(-posx, 0);
     background(0, 0, 0);
@@ -200,6 +203,7 @@ function draw() {
     }
 
     escenario.nivel1top();
+    
 
 
 
@@ -253,8 +257,8 @@ function draw() {
       }
     }
     push();
-    tint(255,200);
-    image(cursorimg, mouseX+posx, mouseY);
+    tint(255, 200);
+    image(cursorimg, mouseX + posx, mouseY);
     pop();
 
   }
@@ -299,8 +303,8 @@ function draw() {
     escenario.nivel2top();
 
     push();
-    tint(255,200);
-    image(cursorimg, mouseX+posx, mouseY);
+    tint(255, 200);
+    image(cursorimg, mouseX + posx, mouseY);
     pop();
 
     //cambio nivel4 - final
@@ -358,11 +362,11 @@ function draw() {
       lluvia[i].display();
       lluvia[i].llover();
     }
-      escenario.nivel2top();
-      push();
-      tint(255,200);
-      image(cursorimg, mouseX+posx, mouseY);
-      pop();
+    escenario.nivel2top();
+    push();
+    tint(255, 200);
+    image(cursorimg, mouseX + posx, mouseY);
+    pop();
 
     //cambio nivel4 - final
     //transparencia
@@ -375,15 +379,15 @@ function draw() {
 
         estado = "nivel4"
         personaje.reset();
-              for (let i = 0; i < cantPuntos; i++) {
-                puntos[i].reset();
-              }
-              for (let i = 0; i < cantObstaculos; i++) {
-                obstaculos[i].reset();
-              }
-              for (let i = 0; i < cantLluvia; i++) {
-                lluvia[i].reset();
-              }
+        for (let i = 0; i < cantPuntos; i++) {
+          puntos[i].reset();
+        }
+        for (let i = 0; i < cantObstaculos; i++) {
+          obstaculos[i].reset();
+        }
+        for (let i = 0; i < cantLluvia; i++) {
+          lluvia[i].reset();
+        }
         console.log(estado);
       }
     }
@@ -392,9 +396,9 @@ function draw() {
   if (estado == "nivel4") {
     //efecto movimiento camara
 
-    if(posx<1300){
+    if (posx < 1300) {
       translate(-posx, 0);
-    } else{
+    } else {
       translate(-1300, 0);
 
     }
@@ -423,8 +427,8 @@ function draw() {
     escenario.nivel4top();
     //Cursor
     push();
-    tint(255,200);
-    image(cursorimg, mouseX+posx, mouseY);
+    tint(255, 200);
+    image(cursorimg, mouseX + posx, mouseY);
     pop();
 
 
@@ -433,16 +437,22 @@ function draw() {
   }
   pop()
 
-  if(estado=="nivel1"){
-        controles.display();
+  if (estado == "nivel1") {
+    //controles.display();
+    
+
   }
 
   if (estado == "nivel1" || estado == "nivel2" || estado == "nivel3" || estado == "nivel4") {
     hud.display();
+    controles.display2();
     hud.hudImagenes();
     hud.vignette();
+    
+    
+    
 
-    //cursor
+    //cursord
 
 
   }
@@ -456,18 +466,20 @@ function draw() {
       hud.reset();
       personaje.reset();
       maquina.stop();
+      controles.reset();
       for (let i = 0; i < cantLluvia; i++) {
         lluvia[i].reset2();
       }
     }
   }
 
-  if(estado=="final"){
+  if (estado == "final") {
     background(255);
-    image(festejo,-250,0);
+    image(festejo, -250, 0);
     hud.reset();
     personaje.reset();
     maquina.stop();
+    controles.reset();
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].reset2();
     }
@@ -480,5 +492,5 @@ function mousePressed() {
   for (let i = 0; i < cantPuntos; i++) {
     puntos[i].click();
   }
-    boss.click();
+  boss.click();
 }

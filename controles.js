@@ -5,6 +5,10 @@ class Controles{
       this.y=100;
       this.speedx=4;
       this.speedy=2;
+
+      this.tiempo = 0;
+      this.x2=10;
+      this.vel = 1;
     }
 
     display(){
@@ -17,5 +21,34 @@ class Controles{
         this.y-=this.speedy;
       }
 
+    }
+
+
+    display2(){
+      this.x2 = this.x2+this.vel
+      if(this.x2 > 0){
+        this.tiempo++;
+      }
+      if(this.x2 > 170 && this.tiempo <200){
+        this.vel = 0;        
+      }
+
+      if(this.tiempo >300){
+        this.vel = -1;
+      }
+            
+
+      image(tutorialClick,this.x2,70)
+      push()
+      fill(0)
+      rect(0, 0, 100, 600);
+      pop()
+
+    }
+
+    reset(){
+      this.tiempo = 0;
+      this.x2=10;
+      this.vel = 1;
     }
 }
