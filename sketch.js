@@ -68,7 +68,6 @@ function preload() {
 
   //hud
   hudBarra = loadImage('img/hud.png');
-  hudtop = loadImage("img/hudtop.png");
   for (let i = 0; i < 6; i++) {
     hudcara[i] = loadImage("img/hudcara" + i + ".png");
   }
@@ -106,6 +105,7 @@ function preload() {
   maquina = loadSound("sound/maquina.mp3");
   musica = loadSound("sound/musica.mp3");
   intro = loadSound("sound/intro.mp3");
+  rust=loadSound("sound/rust.mp3");
 }
 
 function setup() {
@@ -152,6 +152,10 @@ function draw() {
     escenario.subir = 600;
     boss.reset();
     animacionFinal.reset();
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX, mouseY);
+    pop();
 
     if (keyDown('ENTER')) {
       estado = "animacion";
@@ -452,8 +456,10 @@ function draw() {
     
     
 
-    //cursord
-
+    //cursor
+    if (!rust.isPlaying()) {
+      rust.play();
+    }
 
   }
 
@@ -461,12 +467,16 @@ function draw() {
   //menu perdiste
   if (estado == "perdiste") {
     image(perdiste, 0, 0);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX, mouseY);
+    pop();
     if (keyDown(' ')) {
       estado = "nivel1";
       hud.reset();
       personaje.reset();
       maquina.stop();
-      controles.reset();
+      rust.stop();
       for (let i = 0; i < cantLluvia; i++) {
         lluvia[i].reset2();
       }
@@ -475,17 +485,20 @@ function draw() {
 
   if (estado == "final") {
     background(255);
-    image(festejo, -250, 0);
+    image(festejo,-250,0);
+    push();
+    tint(255,200);
+    image(cursorimg, mouseX, mouseY);
+    pop();
     hud.reset();
     personaje.reset();
     maquina.stop();
-    controles.reset();
+    rust.stop();
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].reset2();
     }
     escenario.creditos();
   }
-
 }
 
 function mousePressed() {

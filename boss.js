@@ -17,7 +17,7 @@ class Boss {
     this.tint = false;
 
     this.hudlimite = 0;
-    this.hudancho = 180;
+    this.hudancho = 200;
     this.hudx = width / 2;
     this.hudy = 100;
 
@@ -65,12 +65,15 @@ class Boss {
 
     fill(255,20,20);
     noStroke();
-    rect(2600-190,80,this.hudancho-this.mapeo,8,30);
+    rect(2600-210,70,this.hudancho-this.mapeo,20,30);
 
     fill(255,50);
     stroke(0);
-    strokeWeight(1);
-    rect(2600-190,80,this.hudancho,8,30);
+    strokeWeight(4);
+    rect(2600-210,70,this.hudancho,20,30);
+
+    fill(0);
+    ellipse(2600-210+this.hudancho/2,80,4,4);
 }
 
   reset() {
