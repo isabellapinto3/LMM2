@@ -477,6 +477,7 @@ function draw() {
       personaje.reset();
       maquina.stop();
       rust.stop();
+      controles.reset();
       for (let i = 0; i < cantLluvia; i++) {
         lluvia[i].reset2();
       }
@@ -494,6 +495,7 @@ function draw() {
     personaje.reset();
     maquina.stop();
     rust.stop();
+    controles.reset();
     for (let i = 0; i < cantLluvia; i++) {
       lluvia[i].reset2();
     }
