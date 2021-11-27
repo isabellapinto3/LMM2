@@ -29,6 +29,7 @@ let walkRight;
 let walkLeft;
 let enter;
 let picaranimacion;
+let navePicar;
 
 function preload() {
   //Cargo imagenes astronauta
@@ -37,6 +38,7 @@ function preload() {
   walkLeft = loadAnimation("img/astro6.png", "img/astro7.png", "img/astro8.png");
   picaranimacion = loadAnimation("img/astro4.png", "img/astro5.png");
   enter = loadAnimation("img/enter0.png", "img/enter01.png", "img/enter1.png", "img/enter2.png", "img/enter21.png",);
+  navePicar = loadAnimation("img/click/Click1.png", "img/click/Click2.png", "img/click/Click3.png", "img/click/Click4.png" /*, "img/click/Click5.png", "img/click/Click6.png", "img/click/Click7.png"*/);
 
   //font
   font = loadFont('font/letra.otf');
@@ -111,7 +113,7 @@ function preload() {
 function setup() {
   noCursor();
   createCanvas(1300, 600);
-  estado = "nivel1";
+  estado = "menu";
   nubes[0].resize(30, 30);
 
   nubes[1].resize(40, 40);

@@ -9,6 +9,9 @@ class Controles{
       this.tiempo = 0;
       this.x2=10;
       this.vel = 1;
+
+      this.x3 =10;
+      this.vel2 = 1;
     }
 
     display(){
@@ -26,19 +29,32 @@ class Controles{
 
     display2(){
       this.x2 = this.x2+this.vel
-      if(this.x2 > 0){
-        this.tiempo++;
-      }
-      if(this.x2 > 170 && this.tiempo <200){
+      this.x3 = this.x3+this.vel2
+
+      
+      this.tiempo++;
+      
+      if(this.x2 > 200 && this.tiempo <200){
         this.vel = 0;        
       }
 
       if(this.tiempo >300){
         this.vel = -1;
       }
-            
 
-      image(tutorialClick,this.x2,70)
+      
+      if(this.x3 > 650 && this.tiempo <700){
+        this.vel2 = 0;        
+      }
+
+      if(this.tiempo >800){
+        this.vel2 = -1;
+      }
+      
+      
+      image(tutorial,this.x3-500,60)
+      navePicar.draw(this.x2,100)
+      //image(tutorialClick,this.x2,70)
       push()
       fill(0)
       rect(0, 0, 100, 600);
@@ -50,5 +66,7 @@ class Controles{
       this.tiempo = 0;
       this.x2=10;
       this.vel = 1;
+      this.x3=10;
+      this.vel2 = 1;
     }
 }
