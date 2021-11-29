@@ -8,10 +8,10 @@ class Controles{
 
       this.tiempo = 0;
       this.x2=10;
-      this.vel = 1;
+      this.vel = 2;
 
       this.x3 =10;
-      this.vel2 = 1;
+      this.vel2 = 2;
     }
 
     display(){
@@ -38,8 +38,8 @@ class Controles{
         this.vel = 0;        
       }
 
-      if(this.tiempo >300){
-        this.vel = -1;
+      if(this.tiempo >140){
+        this.vel = -2;
       }
 
       
@@ -47,8 +47,8 @@ class Controles{
         this.vel2 = 0;        
       }
 
-      if(this.tiempo >800){
-        this.vel2 = -1;
+      if(this.tiempo >350){
+        this.vel2 = -2;
       }
       
       
