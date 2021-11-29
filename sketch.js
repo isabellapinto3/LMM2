@@ -176,8 +176,8 @@ function draw() {
     } else {
       translate(-2600, 0);
     }
-    
-    
+
+
 
     //translate(-posx, 0);
     background(0, 0, 0);
@@ -209,17 +209,17 @@ function draw() {
     }
 
     escenario.nivel1top();
-    
+
 
 
 
     //cambio nivel2 //boca
     //transparencia
     if (posx > 2600) {
-      fill(200, 200, 200, 40);
+      //fill(200, 200, 200, 40);
 
-      noStroke();
-      ellipse(width * 3 - 400, 200, 100, 100);
+      //noStroke();
+      //ellipse(width * 3 - 400, 200, 100, 100);
     }
     if (keyDown('w')) {
       if (posx > 3200 && posx < 3650 && personaje.y < 280) {
@@ -242,8 +242,8 @@ function draw() {
     //cambio nivel3 //traquea
     //transparencia
     if (posx > 2600) {
-      fill(200, 200, 200, 40);
-      rect(width * 3 - 100, 260, width * 3, height);
+      //fill(200, 200, 200, 40);
+      //rect(width * 3 - 100, 260, width * 3, height);
     }
     if (keyDown('d')) {
       if (posx > 3670 && personaje.y < 600 && personaje.y > 250) {
@@ -377,8 +377,8 @@ function draw() {
     //cambio nivel4 - final
     //transparencia
     if (posx > 2600) {
-      fill(200, 200, 200, 40);
-      rect(width * 3 - 100, 260, width * 3, height);
+      //fill(200, 200, 200, 40);
+      //rect(width * 3 - 100, 260, width * 3, height);
     }
     if (keyDown('d')) {
       if (posx > 3670 && personaje.y < 500 && personaje.y > 360) {
@@ -445,7 +445,7 @@ function draw() {
 
   if (estado == "nivel1") {
     //controles.display();
-    
+
 
   }
 
@@ -454,9 +454,9 @@ function draw() {
     controles.display2();
     hud.hudImagenes();
     hud.vignette();
-    
-    
-    
+
+
+
 
     //cursor
     if (!rust.isPlaying()) {
